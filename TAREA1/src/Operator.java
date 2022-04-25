@@ -3,11 +3,16 @@ import java.util.Scanner;
 
 public class Operator {
     public Operator(Cloud c){
-        // ???
+        cloud = c;
     }
     public void addShadeControl(ShadeControl sc){
-        // ???
+        rsControl = sc;
     }
+
+    public void addLampControl(LampControl lc){
+        lpControl = lc;
+    }
+
     public void executeCommands(Scanner in, PrintStream out){
         out.println("Time\t" + cloud.getHeaders());
         while(in.hasNextInt()){
@@ -17,7 +22,7 @@ public class Operator {
                 cloud.advanceTime(delta);
                 time+=delta;
             }
-            String device=in.next();
+            String device=in.next(); //Almacena el tipo de dispositivo, si es Lampara o Cortina
             if (!device.equals("C")) {
                 out.println("Unexpected device:" + device);
                 System.exit(-1);
@@ -36,6 +41,7 @@ public class Operator {
         out.println(time+"\t"+cloud.getState());
     }
     private double time=0;
+    private LampControl lpControl;
     private ShadeControl rsControl;
     private Cloud cloud;
     private final double delta=0.1;

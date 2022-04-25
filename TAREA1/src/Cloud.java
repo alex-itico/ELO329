@@ -17,12 +17,18 @@ public class Cloud {
             rs.advanceTime(delta);
         }
     }
-    private DomoticDevice getDomoticDeviceAtChannel( ArrayList<DomoticDevice> devices, int channel){
-        // ???
-    }
-    public void changeLampPowerState(int channel){
-        // ???
-    }
+    private String getDomoticDeviceAtChannel( ArrayList<DomoticDevice> devices, int channel){
+        String Ids = "";
+        for (int i = 0; i < devices.size(); i++) {
+            if(devices.get(i).getChannel() == channel){
+            Ids += devices.get(i).getId() + "/t";
+            }
+        }
+        return Ids;
+    } //Retorna un String con los Id de los dispositivos que estan en el canal especificado.
+    
+
+    //Acciones de la cortina
     public void startShadeUp(int channel){
         // ???
     }
@@ -32,6 +38,39 @@ public class Cloud {
     public void stopShade(int channel){
         // ???
     }
+    //---------------------------------------
+
+    //Acciones de la lampara
+
+    public void changeLampPowerState(int channel){
+        
+        for (Lamp l : lamps) {
+            if (channel == l.getChannel()){
+                l.changePowerState();
+            }
+    }
+
+    public void upColor(int channel){
+
+    }
+
+    
+    public void downColor(int channel){
+
+    }
+    
+    public String getState(){
+        String state_lamp = "";
+        for (DomoticDevice l : lamps){
+            state_lamp = l.toString();
+        }
+        return state_lamp;
+    }
+
+    //-------------------------------------
+    
+    //Obtener cabecera de dispositivos
+
     public String getHeaders(){
         String header = "";
         for (DomoticDevice  rs: rollerShades)
@@ -40,9 +79,8 @@ public class Cloud {
             header += l.getHeader()+"\t";
         return header;
     }
-    public String getState(){
-        // ???
-    }
+
+    
     private ArrayList<DomoticDevice> lamps;
     private ArrayList<DomoticDevice> rollerShades;
 }

@@ -1,36 +1,48 @@
-import java.io.File;
-import java.io.IOException;
+import java.nio.file.ReadOnlyFileSystemException;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Stage2 {
-    public static void main(String [] args) throws IOException {
-        if (args.length != 1) {
-            System.out.println("Usage: java Stage1 <configurationFile.txt>");
-            System.exit(-1);
+
+    public static void main(String[] args) throws FileNotFoundException{
+        //File file = new File("/Users/alexi/Desktop/ELO329/TAREA1/configuration.txt"); NO BORRAR / FORMA ALTERNATIVA
+        Scanner scan = new Scanner(new File(args[0]));
+        //<#_de_cortinas> <#_de_lámparas> <#_controles_cortinas> <#_controles_lámparas>
+        int numero_cortinas = scan.nextInt();
+        int numero_lamparas = scan.nextInt();
+        int n_control_cortinas = scan.nextInt();
+        int n_control_lamparas = scan.nextInt();
+
+        //Ver casos de objetos
+        if (numero_cortinas != 0) {
+            for (int i = 0; i < numero_cortinas; i++) {
+                double rapidez_angular = Double.parseDouble(scan.next());//scan.nextDouble();
+                double largo_cortina = Double.parseDouble(scan.next());//scan.nextDouble();
+                int canal_cortina_n = scan.nextInt();
+            }
+        }
+        if (numero_lamparas != 0) {
+            for (int i = 0; i < numero_lamparas; i++) {
+                int canal_lampara_n = scan.nextInt();
+                //Lamp Lamparas[] = new Lamp(canal_lampara_n)[numero_lamparas];
+            }
+        }
+        if (n_control_cortinas != 0){
+            for (int i = 0; i < n_control_cortinas; i++) {
+                int canal_control_cortinas = scan.nextInt();
+            }
         }
 
-        /*
-        Scanner in = new Scanner(new File(args[0]));
-        //System.out.println("File: " + args[0]);
-        Cloud cloud = new Cloud();
-        // reading <#_de_cortinas> <#_de_lámparas> <#_controles_cortinas> <#_controles_lámparas>
-        int numRollerShades = in.nextInt();
-        in.nextInt();  // skip number of roller shades
-        int numShadeControls = in.nextInt();
-        in.nextInt(); // skip number of lamp's controls
-        // read <alfa0> <length0> <canal0> … <alfaN_1> <lengthN_1> <canalN_1>
-        double alpha = in.nextDouble();
-        double maxLength = in.nextDouble();
-        int channel = in.nextInt();
-        RollerShade rollerShade = new RollerShade(channel, alpha, maxLength);
-        cloud.addRollerShade(rollerShade);
-        System.out.println("next int:"+ in.nextInt()); // skip lamp's channels
-        // creating just one roller shade's control at <canal0>
-        channel = in.nextInt();
-        ShadeControl shadeControl = new ShadeControl(channel, cloud);
-        in.nextInt(); // skipping creation of lamp's control at <canal0>
-        Operator operator = new Operator(shadeControl, cloud);
-        operator.executeCommands(in, System.out);
-         */
+        if (n_control_lamparas != 0){
+            for (int i = 0; i < n_control_lamparas; i++) {
+                int canal_control_lamparas = scan.nextInt();
+            }
+        }
+
+        while(scan.hasNextLine()){
+            System.out.println(scan.nextLine());
+        }
     }
 }
+
