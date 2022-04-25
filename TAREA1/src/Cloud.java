@@ -42,12 +42,13 @@ public class Cloud {
 
     //Acciones de la lampara
 
-    public void changeLampPowerState(int channel){
-        
+    public void changeLampPowerState(int channel) {
+
         for (Lamp l : lamps) {
-            if (channel == l.getChannel()){
+            if (channel == l.getChannel()) {
                 l.changePowerState();
             }
+        }
     }
 
     public void upColor(int channel){
@@ -73,10 +74,12 @@ public class Cloud {
 
     public String getHeaders(){
         String header = "";
-        for (DomoticDevice  rs: rollerShades)
+        for (DomoticDevice  rs: rollerShades){
             header += rs.getHeader()+"\t";
-        for (DomoticDevice l: lamps)
+        }
+        for (DomoticDevice l: lamps){
             header += l.getHeader()+"\t";
+        }
         return header;
     }
 
