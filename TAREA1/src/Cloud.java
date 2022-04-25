@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Cloud {
     public Cloud() {
-        lamps = new ArrayList<DomoticDevice>();
-        rollerShades = new ArrayList<DomoticDevice>();
+        lamps = new ArrayList<Lamp>();
+        rollerShades = new ArrayList<RollerShade>();
     }
     public void addLamp(Lamp l){
         lamps.add(l);
@@ -30,29 +30,37 @@ public class Cloud {
 
     //Acciones de la cortina
     public void startShadeUp(int channel){
-        // ???
+        for (int index = 0; index < rollerShades.size(); index++) {
+            rollerShades.get(index).startUp();
+        }
     }
     public void startShadeDown(int channel){
-        // ???
+        for (int index = 0; index < rollerShades.size(); index++) {
+            rollerShades.get(index).startDown();
+        }
     }
     public void stopShade(int channel){
-        // ???
+        for (int index = 0; index < rollerShades.size(); index++) {
+            rollerShades.get(index).stop();
+        }
     }
+
     //---------------------------------------
 
     //Acciones de la lampara
 
     public void changeLampPowerState(int channel) {
-
         for (Lamp l : lamps) {
             if (channel == l.getChannel()) {
-                l.changePowerState();
+                l.changePowerState(l);
             }
         }
     }
 
-    public void upColor(int channel){
+    
 
+    public void upColor(int channel, char rgb){
+        
     }
 
     
@@ -84,6 +92,6 @@ public class Cloud {
     }
 
     
-    private ArrayList<DomoticDevice> lamps;
-    private ArrayList<DomoticDevice> rollerShades;
+    private ArrayList<Lamp> lamps;
+    private ArrayList<RollerShade> rollerShades;
 }

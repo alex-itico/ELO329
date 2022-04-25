@@ -1,4 +1,5 @@
 import java.nio.file.ReadOnlyFileSystemException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,6 +14,7 @@ public class Stage2 {
         int numero_lamparas = scan.nextInt();
         int n_control_cortinas = scan.nextInt();
         int n_control_lamparas = scan.nextInt();
+        //ArrayList <DomoticDevice> shadeControl = new ArrayList<DomoticDevice>();
 
         //Ver casos de objetos
         if (numero_cortinas != 0) {
@@ -31,6 +33,7 @@ public class Stage2 {
         if (n_control_cortinas != 0){
             for (int i = 0; i < n_control_cortinas; i++) {
                 int canal_control_cortinas = scan.nextInt();
+                //Operator.addShadeControl();
             }
         }
 

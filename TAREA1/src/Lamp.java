@@ -16,7 +16,7 @@ public class Lamp extends DomoticDevice {
 
     //Metodos temporales
     public void upColor(String RGB){
-        if (RGB.equals("R")) {
+        if (RGB.equals("R")) { //falta especificar mientras sea menor o igual a 255
             r += 5;
         }
         if (RGB.equals("G")) {

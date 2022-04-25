@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="128f9233-3859-4d74-8a8a-03a56e445535" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/StageTemp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TAREA1/Stage2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomoticDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DomoticDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DomoticDeviceControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DomoticDeviceControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lamp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LampControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LampControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RollerShade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RollerShade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShadeControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShadeControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
