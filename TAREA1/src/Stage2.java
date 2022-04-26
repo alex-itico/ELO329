@@ -14,7 +14,13 @@ public class Stage2 {
         int numero_lamparas = scan.nextInt();
         int n_control_cortinas = scan.nextInt();
         int n_control_lamparas = scan.nextInt();
-        //ArrayList <DomoticDevice> shadeControl = new ArrayList<DomoticDevice>();
+
+        ArrayList <DomoticDevice> rollerShade = new ArrayList<DomoticDevice>();
+        ArrayList <DomoticDevice> lamp = new ArrayList<DomoticDevice>();
+        ArrayList <DomoticDeviceControl> shadeControl = new ArrayList<DomoticDeviceControl>();
+        ArrayList <DomoticDeviceControl> lampControl = new ArrayList<DomoticDeviceControl>();
+        
+        Cloud cloud = new Cloud();
 
         //Ver casos de objetos
         if (numero_cortinas != 0) {
@@ -22,24 +28,30 @@ public class Stage2 {
                 double rapidez_angular = Double.parseDouble(scan.next());//scan.nextDouble();
                 double largo_cortina = Double.parseDouble(scan.next());//scan.nextDouble();
                 int canal_cortina_n = scan.nextInt();
+                RollerShade rs = new RollerShade(canal_cortina_n, rapidez_angular, largo_cortina);
+                rollerShade.add(rs);
             }
         }
         if (numero_lamparas != 0) {
             for (int i = 0; i < numero_lamparas; i++) {
                 int canal_lampara_n = scan.nextInt();
-                //Lamp Lamparas[] = new Lamp(canal_lampara_n)[numero_lamparas];
+                Lamp l = new Lamp(canal_lampara_n);
+                lamp.add(l);
             }
         }
         if (n_control_cortinas != 0){
             for (int i = 0; i < n_control_cortinas; i++) {
                 int canal_control_cortinas = scan.nextInt();
-                //Operator.addShadeControl();
+                ShadeControl sc = new ShadeControl(canal_control_cortinas, cloud);
+                shadeControl.add(sc);
             }
         }
 
         if (n_control_lamparas != 0){
             for (int i = 0; i < n_control_lamparas; i++) {
                 int canal_control_lamparas = scan.nextInt();
+                LampControl lc = new LampControl(canal_control_lamparas, cloud);
+                lampControl.add(lc);
             }
         }
 
