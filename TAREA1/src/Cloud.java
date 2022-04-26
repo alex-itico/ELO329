@@ -56,7 +56,7 @@ public class Cloud {
             }
         }
     }
-
+    
     
 
     public void upColor(int channel, char rgb){

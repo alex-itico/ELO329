@@ -14,7 +14,7 @@ public class Stage2 {
         int numero_lamparas = scan.nextInt();
         int n_control_cortinas = scan.nextInt();
         int n_control_lamparas = scan.nextInt();
-
+        //Creación del arreglo de listas de los dispositivos.
         ArrayList <DomoticDevice> rollerShade = new ArrayList<DomoticDevice>();
         ArrayList <DomoticDevice> lamp = new ArrayList<DomoticDevice>();
         ArrayList <DomoticDeviceControl> shadeControl = new ArrayList<DomoticDeviceControl>();
@@ -28,8 +28,9 @@ public class Stage2 {
                 double rapidez_angular = Double.parseDouble(scan.next());//scan.nextDouble();
                 double largo_cortina = Double.parseDouble(scan.next());//scan.nextDouble();
                 int canal_cortina_n = scan.nextInt();
-                RollerShade rs = new RollerShade(canal_cortina_n, rapidez_angular, largo_cortina);
+                RollerShade rs = new RollerShade(canal_cortina_n, rapidez_angular, largo_cortina); 
                 rollerShade.add(rs);
+                cloud.addRollerShade(rs); //agregando a la nube la vola
             }
         }
         if (numero_lamparas != 0) {
@@ -37,6 +38,7 @@ public class Stage2 {
                 int canal_lampara_n = scan.nextInt();
                 Lamp l = new Lamp(canal_lampara_n);
                 lamp.add(l);
+                cloud.addLamp(l); 
             }
         }
         if (n_control_cortinas != 0){
@@ -54,6 +56,8 @@ public class Stage2 {
                 lampControl.add(lc);
             }
         }
+
+        
 
         while(scan.hasNextLine()){
             System.out.println(scan.nextLine());
