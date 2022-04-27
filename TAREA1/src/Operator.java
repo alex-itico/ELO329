@@ -20,7 +20,7 @@ public class Operator {
         while(in.hasNextInt()){
             int commandTime=in.nextInt(); //almacena tiempo del segundo
             while (time < commandTime) {
-                out.println(String.format("%.1f",time)+"\t"+cloud.getState());
+                out.println(String.format("%.1f",time)+"\t\t"+cloud.getState());
                 cloud.advanceTime(delta);
                 time+=delta;
             }
@@ -29,7 +29,7 @@ public class Operator {
                 out.println("Unexpected device:" + device);
                 System.exit(-1);
             }
-            int channel = in.nextInt(); //almacena e    l canal correspondiente al que se quiere accionar
+            int channel = in.nextInt(); //almacena el canal correspondiente al que se quiere accionar
             String command=in.next(); //rescata el tipo de comando que es puede ser UP, DOWN, STOP, ON OFF or RGB
 
             if(device.equals("C")) { //Si el dispositivo es de tipo Cortina ejecutará sus comandos
@@ -52,7 +52,7 @@ public class Operator {
             if (device.equals("L")){ //Si el dispositivo es de tipo Lampara ejecturá sus comandos
                     String nextCommand = ""; //Se crea un espacio para el comando siguiente en blanco
                 if (command.charAt(0) != 'N' || command.charAt(0) != 'F') {
-                    nextCommand = in.next(); //Si el comando no es N u F que agregue la acción
+                    nextCommand = in.next(); //Si el comando no es ON u OFF que agregue la acción siguiente
                     }
                 if (channel == lpControl.getChannel()){
                     switch (command.charAt(0)){

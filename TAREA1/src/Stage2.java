@@ -59,6 +59,7 @@ public class Stage2 {
                 accion.addLampControl(lc);
             }
         }
+
         accion.executeCommands(scan, System.out);
         
         /*

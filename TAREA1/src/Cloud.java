@@ -72,12 +72,12 @@ public class Cloud {
         String state_lamp = "";
         String state_roller = "";
         for (DomoticDevice l : lamps){
-            state_lamp = l.toString();
+            state_lamp = l.toString()+"\t"+"\t";
         }
         for (DomoticDevice rs: rollerShades) {
-            state_roller = rs.toString();
+            state_roller = rs.toString()+"\t\t";
         }
-        return state_roller;
+        return state_roller + state_lamp;
     }
 
     //-------------------------------------
@@ -91,7 +91,7 @@ public class Cloud {
         }
         header += "\t";
         for (DomoticDevice l: lamps){
-            header += l.getHeader()+"\t";
+            header += l.getHeader();
         }
         return header;
     }

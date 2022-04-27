@@ -21,7 +21,7 @@ public class RollerShade extends DomoticDevice {
         String s = "RS" + getId();
         return s;
     }
-    public String toString(int length){
+    public String toString(){
         //String s = String.valueOf(Math.round(length/MaxShadeLength*100));
         String s = String.valueOf(length);
         return s;
