@@ -20,29 +20,29 @@ public class Operator {
         while(in.hasNextInt()){
             int commandTime=in.nextInt(); //almacena tiempo del segundo
             while (time < commandTime) {
-                out.println(time+"\t"+cloud.getState());
+                out.println(String.format("%.1f",time)+"\t"+cloud.getState());
                 cloud.advanceTime(delta);
                 time+=delta;
             }
             String device=in.next(); //Almacena el tipo de dispositivo, si es Lampara o Cortina
-            if (!device.equals("C" /* "L"*/)) {
+            if (!(device.charAt(0) == 'C') && !(device.charAt(0) == 'L')) {
                 out.println("Unexpected device:" + device);
                 System.exit(-1);
             }
-            int channel = in.nextInt(); //almacena el canal correspondiente al que se quiere accionar
+            int channel = in.nextInt(); //almacena e    l canal correspondiente al que se quiere accionar
             String command=in.next(); //rescata el tipo de comando que es puede ser UP, DOWN, STOP, ON OFF or RGB
 
             if(device.equals("C")) { //Si el dispositivo es de tipo Cortina ejecutará sus comandos
                 if (channel == rsControl.getChannel()) {
                     switch (command.charAt(0)) {
                         case 'D':
-                            //función de subir la cortina
+                            rsControl.startDown();
                             break;
                         case 'U':
-                            //función de subir la cortina
+                            rsControl.startUp();
                             break;
                         case 'S':
-                            //función de parar la cortina
+                            rsControl.stop();
                             break;
                         default: out.println("Unexpected command:" + command);
                             System.exit(-1);
@@ -57,10 +57,11 @@ public class Operator {
                 if (channel == lpControl.getChannel()){
                     switch (command.charAt(0)){
                         case 'N':
-                            
+                            lpControl.pressPower();
                             //ChangePowerState to ON
                             break;
                         case 'F':
+                            lpControl.pressPower();
                             //ChangePowerState to OFF
                             break;
                         case 'R':
@@ -108,7 +109,7 @@ public class Operator {
                 }
             }*/
         }
-        out.println(time+"\t"+cloud.getState());
+        out.println(String.format("%.1f",time)+"\t"+cloud.getState());
     }
     private double time=0;
     private LampControl lpControl;

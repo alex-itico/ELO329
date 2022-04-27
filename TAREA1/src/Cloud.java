@@ -70,10 +70,14 @@ public class Cloud {
     
     public String getState(){
         String state_lamp = "";
+        String state_roller = "";
         for (DomoticDevice l : lamps){
             state_lamp = l.toString();
         }
-        return state_lamp;
+        for (DomoticDevice rs: rollerShades) {
+            state_roller = rs.toString();
+        }
+        return state_roller;
     }
 
     //-------------------------------------
@@ -83,8 +87,9 @@ public class Cloud {
     public String getHeaders(){
         String header = "";
         for (DomoticDevice  rs: rollerShades){
-            header += rs.getHeader()+"\t";
+            header += rs.getHeader()+"\t"+"\t";
         }
+        header += "\t";
         for (DomoticDevice l: lamps){
             header += l.getHeader()+"\t";
         }

@@ -21,6 +21,7 @@ public class Stage2 {
         ArrayList <DomoticDeviceControl> lampControl = new ArrayList<DomoticDeviceControl>();
         
         Cloud cloud = new Cloud();
+        Operator accion = new Operator(cloud);
 
         //Ver casos de objetos
         if (numero_cortinas != 0) {
@@ -46,6 +47,7 @@ public class Stage2 {
                 int canal_control_cortinas = scan.nextInt();
                 ShadeControl sc = new ShadeControl(canal_control_cortinas, cloud);
                 shadeControl.add(sc);
+                accion.addShadeControl(sc);
             }
         }
 
@@ -54,14 +56,16 @@ public class Stage2 {
                 int canal_control_lamparas = scan.nextInt();
                 LampControl lc = new LampControl(canal_control_lamparas, cloud);
                 lampControl.add(lc);
+                accion.addLampControl(lc);
             }
         }
-
+        accion.executeCommands(scan, System.out);
         
-
+        /*
         while(scan.hasNextLine()){
             System.out.println(scan.nextLine());
+         */
         }
     }
-}
+
 

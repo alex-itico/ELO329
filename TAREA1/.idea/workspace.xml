@@ -3,12 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="128f9233-3859-4d74-8a8a-03a56e445535" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAREA1/Cloud.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAREA1/Cloud.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAREA1/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAREA1/Operator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAREA1/Stage2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAREA1/Stage2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lamp$LampState.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lamp$LampState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lamp.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lamp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LampControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LampControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stage2.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RollerShade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RollerShade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,16 +88,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Stage2.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
