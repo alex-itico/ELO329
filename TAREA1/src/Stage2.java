@@ -22,7 +22,7 @@ public class Stage2 {
         
         Cloud cloud = new Cloud();
         Operator accion = new Operator(cloud);
-
+    
         //Ver casos de objetos
         if (numero_cortinas != 0) {
             for (int i = 0; i < numero_cortinas; i++) {

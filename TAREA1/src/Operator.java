@@ -1,4 +1,6 @@
 import java.io.PrintStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //import javax.print.DocFlavor.STRING;
@@ -48,6 +50,7 @@ public class Operator {
                             System.exit(-1);
                     }
                 }
+
             }
             if (device.equals("L")){ //Si el dispositivo es de tipo Lampara ejecturá sus comandos
                     String nextCommand = ""; //Se crea un espacio para el comando siguiente en blanco
@@ -66,10 +69,10 @@ public class Operator {
                             break;
                         case 'R':
                             if (nextCommand.equals('U')) {
-                                //upColor método
+                                lpControl.upColor(command ,nextCommand);
                             }
                             if (nextCommand.equals('D')) {
-                                //downColor método
+                                lpControl.downColor(command, nextCommand);
                             } else {
                                 out.println("Unexpected command:" + nextCommand);
                             }
@@ -99,17 +102,9 @@ public class Operator {
                     }
                 }
             }
-            /*
-            if (channel == rsControl.getChannel()) {
-                switch (command.charAt(0)) {
-                    case 'D': //??
-                    // ??
-                    default: out.println("Unexpected command:" + command);
-                        System.exit(-1);
-                }
-            }*/
+
         }
-        out.println(String.format("%.1f",time)+"\t"+cloud.getState());
+        //out.println(String.format("%.1f",time)+"\t"+cloud.getState());
     }
     private double time=0;
     private LampControl lpControl;

@@ -31,17 +31,26 @@ public class Cloud {
     //Acciones de la cortina
     public void startShadeUp(int channel){
         for (int index = 0; index < rollerShades.size(); index++) {
-            rollerShades.get(index).startUp();
+            if (rollerShades.get(index).getChannel() == channel) {
+                rollerShades.get(index).startUp();
+            }
+            //rollerShades.get(index).startUp();
         }
     }
     public void startShadeDown(int channel){
         for (int index = 0; index < rollerShades.size(); index++) {
-            rollerShades.get(index).startDown();
+            if (rollerShades.get(index).getChannel() == channel) {
+                rollerShades.get(index).startDown();
+            }
+
         }
     }
     public void stopShade(int channel){
         for (int index = 0; index < rollerShades.size(); index++) {
-            rollerShades.get(index).stop();
+            if (rollerShades.get(index).getChannel() == channel) {
+                rollerShades.get(index).stop();
+            }
+            //rollerShades.get(index).stop();
         }
     }
 
@@ -56,28 +65,32 @@ public class Cloud {
             }
         }
     }
-    
-    
-
-    public void upColor(int channel, char rgb){
-        
+    public void upColor(int channel, String rgb){
+        for (Lamp l : lamps) {
+            if (channel == l.getChannel()){
+                l.upColor(rgb);
+            }
+        }
     }
 
-    
-    public void downColor(int channel){
-
+    public void downColor(int channel, String rgb){
+        for (Lamp l : lamps) {
+            if (channel == l.getChannel()){
+                l.downColor(rgb);
+            }
+        }
     }
-    
+    //Obtener los estados de los dispositivos
     public String getState(){
         String state_lamp = "";
         String state_roller = "";
         for (DomoticDevice l : lamps){
-            state_lamp = l.toString()+"\t"+"\t";
+            state_lamp += l.toString()+"\t"+"\t\t";
         }
         for (DomoticDevice rs: rollerShades) {
-            state_roller = rs.toString()+"\t\t";
+            state_roller += rs.toString()+"\t\t";
         }
-        return state_roller + state_lamp;
+        return state_roller +"\t"+ state_lamp;
     }
 
     //-------------------------------------
@@ -87,11 +100,11 @@ public class Cloud {
     public String getHeaders(){
         String header = "";
         for (DomoticDevice  rs: rollerShades){
-            header += rs.getHeader()+"\t"+"\t";
+            header += rs.getHeader()+"\t\t";
         }
         header += "\t";
         for (DomoticDevice l: lamps){
-            header += l.getHeader();
+            header += l.getHeader()+"\t\t";
         }
         return header;
     }
