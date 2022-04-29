@@ -43,16 +43,22 @@ public class Lamp extends DomoticDevice {
         if (RGB.equals("R")) {
             if (r >=0){
                 r-= 5;
+            }else {
+                r-=0;
             }
         }
         if (RGB.equals("G")) {
-            if (g >=255) {
+            if (g >=0) {
                 g -= 5;
+            }else {
+                g-=0;
             }
         }
         if (RGB.equals("B")) {
-            if (b >=255) {
+            if (b >=0) {
                 b -= 5;
+            }else {
+                b-=0;
             }
         }
     }

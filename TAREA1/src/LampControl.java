@@ -5,10 +5,10 @@ public class LampControl extends DomoticDeviceControl {
     public void pressPower(){
         cloud.changeLampPowerState(channel);
     }
-    public void upColor(String UD, String RGB){
+    public void upColor(String RGB){
         cloud.upColor(channel, RGB);
     }
-    public void downColor(String UP, String RGB){
-        cloud.downColor(channel, RGB);
+    public void downColor(String RGB){
+        cloud.downColor(channel, RGB);        
     }
 }

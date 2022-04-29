@@ -68,11 +68,11 @@ public class Operator {
                             //ChangePowerState to OFF
                             break;
                         case 'R':
-                            if (nextCommand.equals('U')) {
-                                lpControl.upColor(command ,nextCommand);
+                            if (nextCommand == "U") {
+                                lpControl.upColor(command); // R-G-B , U-D
                             }
                             if (nextCommand.equals('D')) {
-                                lpControl.downColor(command, nextCommand);
+                                lpControl.downColor(command);
                             } else {
                                 out.println("Unexpected command:" + nextCommand);
                             }

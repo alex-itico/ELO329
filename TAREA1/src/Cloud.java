@@ -65,6 +65,7 @@ public class Cloud {
             }
         }
     }
+
     public void upColor(int channel, String rgb){
         for (Lamp l : lamps) {
             if (channel == l.getChannel()){
