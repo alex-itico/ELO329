@@ -1,9 +1,12 @@
 public class Lamp extends DomoticDevice {
     public Lamp (int channel){
         super(nextId++, channel);
-        r = 0;
-        g = 0;
-        b = 0;
+        //r = 0;
+        r=255;
+        //g = 0;
+        g=255;
+        //b = 0;
+        b=255;
         state = LampState.OFF;
     }
     public void changePowerState(Lamp l){
@@ -16,22 +19,22 @@ public class Lamp extends DomoticDevice {
 
     //Metodos temporales
     public void upColor(String RGB){
-        if (RGB.equals("R")) { //falta especificar mientras sea menor o igual a 255
-            if (r <=255){
+        if (RGB.equals("R")) {
+            if (r <255){
                 r+= 5;
             }else {
                 r+=0;
             }
         }
         if (RGB.equals("G")) {
-            if (g <=255) {
+            if (g <255) {
                 g += 5;
             }else {
                 g+=0;
             }
         }
         if (RGB.equals("B")) {
-            if (b <=255) {
+            if (b < 255) {
                 b += 5;
             }else {
                 b+=0;
@@ -41,21 +44,21 @@ public class Lamp extends DomoticDevice {
 
     public void downColor(String RGB){
         if (RGB.equals("R")) {
-            if (r >=0){
+            if (r >0){
                 r-= 5;
             }else {
                 r-=0;
             }
         }
         if (RGB.equals("G")) {
-            if (g >=0) {
+            if (g > 0) {
                 g -= 5;
             }else {
                 g-=0;
             }
         }
         if (RGB.equals("B")) {
-            if (b >=0) {
+            if (b >0) {
                 b -= 5;
             }else {
                 b-=0;
@@ -69,7 +72,7 @@ public class Lamp extends DomoticDevice {
     }
     public String toString(){
         if (state==LampState.ON)
-            return ""+r+"\t"+g+"\t"+b;
+            return ""+r+"\t\t"+g+"\t\t"+b;
         else
             return "0\t\t\t0\t\t\t0";
     }

@@ -54,7 +54,7 @@ public class Operator {
             }
             if (device.equals("L")){ //Si el dispositivo es de tipo Lampara ejecturá sus comandos
                     String nextCommand = ""; //Se crea un espacio para el comando siguiente en blanco
-                if (command.charAt(0) != 'N' || command.charAt(0) != 'F') {
+                if (command.charAt(0) != 'N' && command.charAt(0) != 'F') {
                     nextCommand = in.next(); //Si el comando no es ON u OFF que agregue la acción siguiente
                     }
                 if (channel == lpControl.getChannel()){
@@ -68,31 +68,31 @@ public class Operator {
                             //ChangePowerState to OFF
                             break;
                         case 'R':
-                            if (nextCommand == "U") {
+                            if (nextCommand.equals("U")) {
                                 lpControl.upColor(command); // R-G-B , U-D
                             }
-                            if (nextCommand.equals('D')) {
+                            else if (nextCommand.equals("D")) {
                                 lpControl.downColor(command);
                             } else {
                                 out.println("Unexpected command:" + nextCommand);
                             }
                             break;
                         case 'G':
-                            if (nextCommand.equals('U')) {
-                                //upColor método
+                            if (nextCommand.equals("U")) {
+                                lpControl.upColor(command);
                             }
-                            if (nextCommand.equals('D')) {
-                                //downColor método
+                            else if (nextCommand.equals("D")) {
+                                lpControl.downColor(command);
                             } else {
                                 out.println("Unexpected command:" + nextCommand);
                             }
                             break;
                         case 'B':
-                            if (nextCommand.equals('U')) {
-                                //upColor método
+                            if (nextCommand.equals("U")) {
+                                lpControl.upColor(command);
                             }
-                            if (nextCommand.equals('D')) {
-                                //downColor método
+                            else if (nextCommand.equals("D")) {
+                                lpControl.downColor(command);
                             } else {
                                 out.println("Unexpected command:" + nextCommand);
                             }
@@ -104,7 +104,7 @@ public class Operator {
             }
 
         }
-        //out.println(String.format("%.1f",time)+"\t"+cloud.getState());
+        out.println(String.format("%.1f",time-0.1)+"\t\t"+cloud.getState());
     }
     private double time=0;
     private LampControl lpControl;
