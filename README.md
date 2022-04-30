@@ -13,9 +13,9 @@
 - **Nombre:** Alex Aravena       
 **Rol:** 202004521-6    
 **Correo:** alexaravenata@usm.cl
-- **Nombre:** Javier Zuñiga      
-**Rol:**     
-**Correo:** @usm.cl
+- **Nombre:** Javier Acuña       
+**Rol:** 201944537-5    
+**Correo:** javier.acuna@usm.cl
 
 ---
 
@@ -28,22 +28,27 @@ Se pide tambien que los resultados de dicha configuracion se entreguen en
 un archivo .tsv para poder ver graficamente el ambiente que se busca recrear.
 
 ---
-## Requisitos de compilacion  
+## Requisitos de compilacion y ejecución
 
-**Tener Compilador:** javac 13.0.7  
+**Tener Compilador:** jdk-17.0.2
 **Sistema Operativo:** Linux   
-Deben descargarse todos los archivos y guardarlos en un mismo directorio en Aragorn. Usando el makefile que tambien es parte de la entrega pueden realizar el comando $Make para correr todo los archivos del programa
+Deben descargarse todos los archivos y guardarlos en un mismo directorio en Aragorn. Usando el makefile que tambien es parte de la entrega pueden realizar el comando:
+
+$Make para compilación de todos los archivos correspondientes dentro del directorio.
+$Make run para ejecución automatica del código. En caso de no resultar, por terminal desplegar comando **java "nombre del proyecto"** ./configuration.txt.
+$Make clean para eliminación de archivos de tipo .class en el directorio.
+
 
 ---
 ## Archivos del programa  
--Cloud:  
--DomoticDevice:  
--DomoticDeviceControl:  
--Lamp:  
--LampControl:  
--Operator:  
--RollerShade:  
--ShadeControl:  
+-Cloud: clase que se encarga de almacenar arreglos de cortinas y lamparas, y de distribuir sus métodos en domotica.
+-DomoticDevice: clase que construye un dispositivo de domotica almacenando su Id y canal correspondiente.
+-DomoticDeviceControl: clase que construye un dispositivo de control domotica almacenando su Id y canal correspondiente.
+-Lamp: objeto domotica de tipo Lampara.
+-LampControl: control domotica de tipo Lampara.
+-Operator: clase que desplegara la lectura de las acciones del archivo configuration.txt
+-RollerShade: objeto domotica de tipo Cortina.
+-ShadeControl: control comotica de tipo Cortina
 -Stage2: Funcion Main del programa inicializa las cortinas y las lamparas junto con el cloud y los operadores segun el archivo de entrada que recibe
 
 
