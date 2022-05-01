@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="128f9233-3859-4d74-8a8a-03a56e445535" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAREA1/Lamp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAREA1/Lamp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TAREA1/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAREA1/Operator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAREA1/RollerShade$Motor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAREA1/RollerShade$Motor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAREA1/configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAREA1/configuration.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lamp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RollerShade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RollerShade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StageFinal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stage2_ClassDiagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StageTemp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,10 +59,10 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="Stage2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Stage2" />
+    <configuration name="StageFinal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StageFinal" />
       <module name="TAREA1" />
-      <option name="PROGRAM_PARAMETERS" value="/Users/alexi/Desktop/GIT/ELO329/TAREA1/src/configuration.txt" />
+      <option name="PROGRAM_PARAMETERS" value="/Users/alexi/Desktop/GIT/ELO329/TAREA1/src/configuration.txt &gt; salida.csv" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -63,7 +70,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Stage2" />
+        <item itemvalue="Application.StageFinal" />
       </list>
     </recent_temporary>
   </component>

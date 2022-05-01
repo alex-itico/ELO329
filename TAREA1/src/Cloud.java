@@ -17,6 +17,7 @@ public class Cloud {
             rs.advanceTime(delta);
         }
     }
+    /*
     private String getDomoticDeviceAtChannel( ArrayList<DomoticDevice> devices, int channel){
         String Ids = "";
         for (int i = 0; i < devices.size(); i++) {
@@ -26,7 +27,7 @@ public class Cloud {
         }
         return Ids;
     } //Retorna un String con los Id de los dispositivos que estan en el canal especificado.
-    
+    */
 
     //Acciones de la cortina
     public void startShadeUp(int channel){
@@ -34,7 +35,6 @@ public class Cloud {
             if (rollerShades.get(index).getChannel() == channel) {
                 rollerShades.get(index).startUp();
             }
-            //rollerShades.get(index).startUp();
         }
     }
     public void startShadeDown(int channel){
@@ -50,12 +50,8 @@ public class Cloud {
             if (rollerShades.get(index).getChannel() == channel) {
                 rollerShades.get(index).stop();
             }
-            //rollerShades.get(index).stop();
         }
     }
-
-    //---------------------------------------
-
     //Acciones de la lampara
 
     public void changeLampPowerState(int channel) {

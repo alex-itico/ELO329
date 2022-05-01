@@ -23,7 +23,6 @@ public class RollerShade extends DomoticDevice {
     }
     public String toString(){
         String s = String.valueOf(Math.round(length/MaxShadeLength*100)) + "%";
-        //String s = String.valueOf(length);
         return s;
     }
     private class Motor {  //nested class, Motor is only used within RollerShade.
@@ -52,18 +51,18 @@ public class RollerShade extends DomoticDevice {
                     length += 0;
                     break;
                 case DOWNWARD:
-                    if (length <= MaxShadeLength){
+                    if (length < MaxShadeLength){
                         length += increment;
                     }else length +=0;
                     break;
                 case UPWARD:
-                    if (length >=0){
+                    if (length > 0){
                         length -= increment;
                     }
                     break;
             }
         }
-        private double alpha; //Velocidad angular (?)
+        private double alpha;
         private MotorState state;
         private static double RADIUS=0.04;
     }
