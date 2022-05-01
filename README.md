@@ -54,6 +54,61 @@ Deben descargarse todos los archivos y guardarlos en un mismo directorio en Arag
 
 ---
 ## Consideraciones finales  
-Rellenar con consideraciones
+El archivo de entrada es un .txt con el nombre **"configuration.txt"**, a través de este sus primero 5 lineas especifican los parametros de los dispositivos domoticos. 
 
+[n° Cortinas] [n° Lamparas]  [n° Controles de Cortinas]  [n° Controles de Lamparas]
 
+[Velocidad angular cortina]  [Largo cortina]  [Canal cortina] 
+
+[Canal Lampara]   
+
+[Canal control cortinas] 
+
+[Canal control lamparas] 
+
+El resto de lineas son acciones que realizan estos dispositivos. A la hora de darle una acción es una acción por segundo.
+Ejemplo:
+ 
+ 0 C 1 D
+  
+ 1 L 2 N
+  
+ 2 L 2 B U
+    -> Acción adicional "Blue Up"
+
+ No puede ser tipo:
+  
+    0 C 1 D L 4 B D
+  
+  Tiene mas de 1 dispositivo ejecutando una acción dentro de un segundo.
+ 
+ ---
+ Parametros:
+ 
+   - T[s] : el tiempo
+   - C/L : cortina o lampara
+   - n° : canal de cortina o lampara
+   - Si es una cortina sus acciones son:
+       - U: subir cortina
+       - D: bajar cortina
+       - S: parar cortina
+   - Si es una lampara sus acciones son:
+       - N: encendido de lampara
+       - F: apagado de lampara
+       - R/G/B: red - green - blue 
+           - U: aumentar la intensidad
+           - D: disminuir la intensidad
+---
+Archivo de salida:
+
+En el texto de salida se genera un archivo **.tsv** el cúal separa los datos por medio de tabulaciones. 
+Las casillas mostraran lo siguiente:
+\
+<Tiempo> <Cortina %> <N_cortina %> <Ln°R> <Ln°G> <Ln°B>
+Tiempo: en segundos.
+El % de la cortina:
+   Cuando esta completamente abierta la cortina se indica con un 100%.
+   Cuando esta este completamente cerrada se indica con un 0%.
+Los valores de los canales RGB de la cortina N°. Van desde 0-255.
+ 
+    
